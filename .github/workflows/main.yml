@@ -52,8 +52,8 @@ jobs:
         uses: actions/dependency-review-action@v4
         with:
           fail-on-severity: critical
-          base_ref: ${{ github.event.pull_request.base.ref }}
-          head_ref: ${{ github.event.pull_request.head.ref }}
+          base-ref: ${{ github.event.pull_request.base.ref }}
+          head-ref: ${{ github.event.pull_request.head.ref }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
