@@ -1,0 +1,42 @@
+name: Notification
+
+on:
+  workflow_run:
+    workflows:
+      - MERNflow Pipeline
+    types:
+      - completed
+
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Success Notification
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Deployment Successful: MERNflow"
+          body: |
+            The application has been deployed successfully through the MERNflow pipeline.
+          to: ${{ secrets.REC_EMAIL }}
+          from: "GitHub Actions mr.death0w0@gmail.com"
+
+      - name: Send Failure Notification
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Deployment Failed: MERNflow"
+          body: |
+            The application deployment failed.
+          to: ${{ secrets.REC_EMAIL }}
+          from: "GitHub Actions mr.death0w0@gmail.com"
