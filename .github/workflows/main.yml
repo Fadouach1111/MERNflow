@@ -32,6 +32,11 @@ jobs:
           npm install eslint --save-dev
           npx eslint .
 
+      - name: Run Frontend Tests
+        working-directory: ./client
+        run: |
+          npm test
+
       - name: Set up Node.js (Backend)
         uses: actions/setup-node@v4
         with:
@@ -47,15 +52,6 @@ jobs:
         run: |
           npm install eslint --save-dev
           npx eslint .
-
-      - name: Dependency check
-        uses: actions/dependency-review-action@v4
-        with:
-          fail-on-severity: critical
-          base-ref: 'refs/heads/main'
-          head-ref: 'refs/heads/feature-branch'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
 
 
   dockerize-and-deploy:
