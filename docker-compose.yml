@@ -2,13 +2,15 @@ version: '3'
 services:
   backend:
     build: ./server
+    container_name: mf_backend
     ports:
-      - "5000:5000"
+      - "8000:8000"
     depends_on:
       - db
 
   frontend:
     build: ./client
+    container_name: mf_frontend
     ports: 
       - "80:80"
     depends_on:
@@ -16,6 +18,7 @@ services:
   
   db:
     image: mongo:6.0
+    container_name: mf_mongodb
     volumes:
       - mongo-data:/data/db
     ports:
