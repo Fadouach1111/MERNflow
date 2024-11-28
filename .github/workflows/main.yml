@@ -67,12 +67,12 @@ jobs:
       - name: Scan Frontend Docker Image
         run: |
           docker pull aquasec/trivy:latest
-          docker run --rm aquasec/trivy:latest image frontend
+          docker run --rm aquasec/trivy:latest image mernflow-frontend
 
       - name: Scan Backend Docker Image
         run: |
           docker pull aquasec/trivy:latest
-          docker run --rm aquasec/trivy:latest image backend
+          docker run --rm aquasec/trivy:latest image mernflow-backend
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -82,13 +82,13 @@ jobs:
 
       - name: Push Frontend Docker Image
         run: |
-          docker tag frontend:latest ${{ secrets.DOCKER_USERNAME }}/frontend:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/frontend:latest
+          docker tag mernflow-frontend:latest ${{ secrets.DOCKER_USERNAME }}/mernflow-frontend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/mernflow-frontend:latest
 
       - name: Push Backend Docker Image
         run: |
-          docker tag backend:latest ${{ secrets.DOCKER_USERNAME }}/backend:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/backend:latest
+          docker tag mernflow-backend:latest ${{ secrets.DOCKER_USERNAME }}/mernflow-backend:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/mernflow-backend:latest
 
       - name: Deploy on EC2
         run: |
