@@ -5,8 +5,6 @@ services:
     container_name: mf_backend
     ports:
       - "8000:8000"
-    depends_on:
-      - db
 
   frontend:
     build: ./client
@@ -16,13 +14,3 @@ services:
     depends_on:
       - backend
   
-  db:
-    image: mongo:6.0
-    container_name: mf_mongodb
-    volumes:
-      - mongo-data:/data/db
-    ports:
-      - "27017:27017"
-
-volumes:
-  mongo-data:
