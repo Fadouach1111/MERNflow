@@ -54,7 +54,7 @@ jobs:
 
       - name: Cleanup old Docker Containers
         run: |
-          docker rm -f mf_frontend mf_backend mf_mongodb || true
+          docker rm -f mf_frontend mf_backend || true
 
       - name: Build Images with Docker Compose
         working-directory: .
