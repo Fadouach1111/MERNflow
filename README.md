@@ -27,17 +27,23 @@ This project demonstrates the CI/CD pipeline setup for a MERN (MongoDB, Express,
 
 ### Steps to Deploy:
 1. **Clone the Repository:** First, clone this repository to your local machine:  
-`git clone https://github.com/Fr4nkl1n-A/MERNflow`  
-`cd MERNflow`
+```bash
+git clone https://github.com/Fr4nkl1n-A/MERNflow  
+cd MERNflow
+```
 2. **Create Your Own Repository on GitHub:**
    - Go to GitHub and create a new repository.
    - Once created, add your new repository as a remote to your local clone:  
-     `git remote set-url origin https://github.com/<your-github-username>/<your-new-repository-name>.git`
+     ```bash
+     git remote set-url origin https://github.com/<your-github-username>/<your-new-repository-name>.git
+     ```
 3. **Set Up Your Environment Variables:** Configure the following environment variables based on your setup.
 4. **Push the Code to Your GitHub Repository:** After setting up the *.env* file, commit your changes and push the code to your GitHub repository:  
-    `git add .`  
-    `git commit -m "Setup for deployment"`  
-    `git push origin main`
+    ```bash
+    git add .  
+    git commit -m "Setup for deployment"
+    git push origin main
+    ```
 5. **Set Up GitHub Actions:** When you push your code, the GitHub Actions workflow will automatically trigger the deployment process. This includes:  
     - Building the Docker images
     - Running security scans with Trivy
@@ -51,19 +57,19 @@ This project demonstrates the CI/CD pipeline setup for a MERN (MongoDB, Express,
 
 ## Screenshots
 ### CI/CD Pipeline: Fully automated pipeline to build and deploy a MERN application.
-![Github actions job 1](https://github.com/user-attachments/assets/94e8a823-b914-4ac2-9d6e-62eb050b2ea8)
-![Github actions job 2](https://github.com/user-attachments/assets/6d7fdaa5-2c95-4060-9031-d81d2d42bc26)
+![Github actions job 1](Screenshots/Github_actions_job_1.png)
+![Github actions job 2](Screenshots/Github_actions_job_2.png)
 
 ### Email Notifications: Sends email notifications for successful or failed deployments.
 ![Github actions job 3](https://github.com/user-attachments/assets/fd39da02-0230-434d-ba61-cd4d605608e5)
-![success email](https://github.com/user-attachments/assets/d41b483c-9d61-4eea-a9c0-75c7963ec808)
+![success email](Screenshots/success_email.png)
 
 ### Dockerized Environment: Both frontend and backend are containerized using Docker for portability and consistency.
-![terminal docker containers](https://github.com/user-attachments/assets/24f2527b-b59d-4d8d-938a-9e75f6442fca)
-![terminal docker images](https://github.com/user-attachments/assets/3153bc55-1b86-45d4-954d-8c050ebf7d5f)
+![terminal docker containers](Screenshots/terminal_docker_containers.png)
+![terminal docker images](Screenshots/terminal_docker_images.png)
 
 ### Web Preview
-![application](https://github.com/user-attachments/assets/8a49f533-8032-4369-8182-7af6fb80b435)
+![application](Screenshots/application.PNG)
 
 
  
