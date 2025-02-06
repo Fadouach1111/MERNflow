@@ -3,6 +3,9 @@
 ## Overview:
 This project demonstrates the CI/CD pipeline setup for a MERN (MongoDB, Express, React, Node.js) stack application using Docker, GitHub Actions, and AWS EC2. The pipeline automates the build, test, and deployment processes, and sends email notifications on success or failure.
 
+## Diagram:
+![image](https://github.com/user-attachments/assets/8450dff0-5522-42ee-bf6e-5b3cfaeef2d5)
+
 ## Features:
 - CI/CD Pipeline: Fully automated pipeline to build and deploy a MERN application.
 - Dockerized Environment: Both frontend and backend are containerized using Docker for portability and consistency.
