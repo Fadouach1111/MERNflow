@@ -1,16 +1,1 @@
-version: '3'
-services:
-  backend:
-    build: ./server
-    container_name: mf_backend
-    ports:
-      - "8000:8000"
 
-  frontend:
-    build: ./client
-    container_name: mf_frontend
-    ports: 
-      - "80:80"
-    depends_on:
-      - backend
-  
